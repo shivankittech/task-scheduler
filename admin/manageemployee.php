@@ -40,7 +40,7 @@ header('location:manageemployee.php');
     <head>
         
         <!-- Title -->
-        <title>Admin | Manage Employees</title>
+        <title>Admin | Manage Users</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
@@ -84,21 +84,19 @@ header('location:manageemployee.php');
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
-                        <div class="page-title">Manage EmployesWWW</div>
+                        <div class="page-title">Manage Users</div>
                     </div>
                    
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
-                                <span class="card-title">Employees Info</span>
+                                <span class="card-title">Users Info</span>
                                 <?php if($msg){?><div class="succWrap"><strong>SUCCESS</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
                                 <table id="example" class="display responsive-table ">
                                     <thead>
                                         <tr>
                                             <th>Sr no</th>
-                                            <th>Emp Id</th>
                                             <th>Full Name</th>
-                                            <th>Department</th>
                                              <th>Status</th>
                                              <th>Reg Date</th>
                                             <th>Action</th>
@@ -117,9 +115,7 @@ foreach($results as $result)
 {               ?>  
                                         <tr>
                                             <td> <?php echo htmlentities($cnt);?></td>
-                                            <td><?php echo htmlentities($result->EmpId);?></td>
                                             <td><?php echo htmlentities($result->FirstName);?>&nbsp;<?php echo htmlentities($result->LastName);?></td>
-                                            <td><?php echo htmlentities($result->Department);?></td>
                                              <td><?php $stats=$result->Status;
 if($stats){
                                              ?>

@@ -151,31 +151,13 @@ foreach($results as $result)
 <option value="Other">Other</option>
 </select>
 </div>
-
-<div class="input-field col m6 s12">
 <label for="birthdate">Date of Birth</label>
+<div class="input-field col m6 s12">
+
 <input id="birthdate" name="dob"  class="datepicker" value="<?php echo htmlentities($result->Dob);?>" >
 </div>
 
                                                     
-
-<div class="input-field col m6 s12">
-<select  name="department" autocomplete="off">
-<option value="<?php echo htmlentities($result->Department);?>"><?php echo htmlentities($result->Department);?></option>
-<?php $sql = "SELECT DepartmentName from tbldepartments";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $resultt)
-{   ?>                                            
-<option value="<?php echo htmlentities($resultt->DepartmentName);?>"><?php echo htmlentities($resultt->DepartmentName);?></option>
-<?php }} ?>
-</select>
-</div>
-
 <div class="input-field col m6 s12">
 <label for="address">Address</label>
 <input id="address" name="address" type="text"  value="<?php echo htmlentities($result->Address);?>" autocomplete="off" required>

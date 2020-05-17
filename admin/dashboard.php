@@ -67,7 +67,7 @@ $empcount=$query->rowCount();
                             
                                 <span class="card-title">Active Users</span>
     <?php
-$sql = "SELECT id from tbldepartments";
+$sql = "SELECT id from tblemployees where Status=1";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -83,7 +83,7 @@ $dptcount=$query->rowCount();
                             <div class="card-content">
                                 <span class="card-title">Total Tasks</span>
                                     <?php
-$sql = "SELECT id from  tblleavetype";
+$sql = "SELECT id from  tblleaves";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -104,15 +104,15 @@ $leavtypcount=$query->rowCount();
                             <div class="card invoices-card">
                                 <div class="card-content">
                                  
-                                    <span class="card-title">Latest Leave Applications</span>
+                                    <span class="card-title">Latest task list</span>
                              <table id="example" class="display responsive-table ">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th width="200">Employe Name</th>
-                                            <th width="120">Leave Type</th>
+                                            <th width="200">User Name</th>
+                                            <th width="120">Task</th>
 
-                                             <th width="180">Posting Date</th>                 
+                                             <th width="180">Creation Date</th>                 
                                             <th>Status</th>
                                             <th align="center">Action</th>
                                         </tr>
